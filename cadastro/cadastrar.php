@@ -10,6 +10,7 @@
     $nome = $_REQUEST["nome"];
     $sexo = $_REQUEST["sexo"];
     $estado = $_REQUEST["estado"];
+    $observacoes = $_REQUEST["observacoes"];
     
     /*Obter  os dados do formulário*/
     $aceito = false;
@@ -24,6 +25,7 @@
     $pessoa["sexo"] = $sexo;
     $pessoa["aceito"] = $aceito;
     $pessoa["estado"] = $estado;
+    $pessoa["observacoes"] = $observacoes;
     /*Fim - Preencher o cadastro da pessoa*/
     
     
