@@ -4,7 +4,7 @@
     session_start();
     
     if(!isset($_SESSION["cadastros"])){
-        echo "Não existem pessoas para editar";  
+        echo "Não existem pessoas para cadastrar";  
     }
     else{
         $id = $_REQUEST["id"];
