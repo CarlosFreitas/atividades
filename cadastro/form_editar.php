@@ -14,7 +14,7 @@
             <br/>
             <label>Digite o novo nome da pessoa:</label>
             <br/>
-            <input type="text" name="nome" />
+            <?php require_once("campos_pessoa.php"); ?>
             <input type="submit" value="Editar" />
         </form>
     </body>
@@ -29,9 +29,9 @@
         
         $cadastros = $_SESSION["cadastros"];
         
-        foreach($cadastros as $id =>$pessoa){
+        foreach($cadastros as $id => $pessoa){
             if($pessoa != null){
-            echo "[$id] => $pessoa <br/>";
+            echo "[$id] => " . $pessoa["nome"] .  "<br/>";
             }
         }
     }
