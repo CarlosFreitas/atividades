@@ -8,7 +8,7 @@
             require_once("menu.php");    
         ?>
         <form action="cadastrar.php" method="post">
-            <input type="text" name="nome" />
+            <?php require_once("campos_pessoa.php"); ?>   
             <input type="submit" value="Enviar" />
         </form>
     </body>
