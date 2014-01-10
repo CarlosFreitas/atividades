@@ -8,8 +8,26 @@
     }
     
     $nome = $_REQUEST["nome"];
+    $sexo = $_REQUEST["sexo"];
+    $estado = $_REQUEST["estado"];
     
-    array_push($_SESSION["cadastros"], $nome);
+    /*Obter  os dados do formulário*/
+    $aceito = false;
+    if(isset($_REQUEST["aceito"])){
+        $aceito = true;
+    }
+    /*Fim - Obter  os dados do formulário*/
+    
+    /*Preencher o cadastro da pessoa*/
+    $pessoa = array();
+    $pessoa["nome"] = $nome;
+    $pessoa["sexo"] = $sexo;
+    $pessoa["aceito"] = $aceito;
+    $pessoa["estado"] = $estado;
+    /*Fim - Preencher o cadastro da pessoa*/
+    
+    
+    array_push($_SESSION["cadastros"], $pessoa);
     
     echo "Cadastro efetuado com sucesso!";
    
