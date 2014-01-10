@@ -8,7 +8,7 @@
             require_once("menu.php");    
         ?>
         <form action="remover.php" method="post">
-            <label>Digite o código da pessoa para remover:</label><br/>
+            <label>Digite o código da pessoa para remover:</label><br/>          
             <input type="text" name="id" />
             <input type="submit" value="Remover" />
         </form>
@@ -26,7 +26,7 @@
         
         foreach($cadastros as $id =>$pessoa){
             if($pessoa != null){
-            echo "[$id] => $pessoa <br/>";
+            echo "[$id] => " . $pessoa["nome"] . " <br/>";
             }
         }
     }
