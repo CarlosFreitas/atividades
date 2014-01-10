@@ -4,32 +4,33 @@
     session_start();
     
     if(!isset($_SESSION["cadastros"])){
-        $_SESSION["cadastros"] = array();
+        echo "Não existem pessoas para editar";  
     }
-    
-    $nome = $_REQUEST["nome"];
-    $sexo = $_REQUEST["sexo"];
-    $estado = $_REQUEST["estado"];
-    $observacoes = $_REQUEST["observacoes"];
-    
-    /*Obter  os dados do formulário*/
-    $aceito = false;
+    else{
+        $id = $_REQUEST["id"];
+        $nome = $_REQUEST["nome"];
+        $sexo = $_REQUEST["sexo"];
+        $estado = $_REQUEST["estado"];
+        $observacoes = $_REQUEST["observacoes"];
+        
+        $aceito = false;
     if(isset($_REQUEST["aceito"])){
         $aceito = true;
     }
-    /*Fim - Obter  os dados do formulário*/
     
-    /*Preencher o cadastro da pessoa*/
-    $pessoa = array();
-    $pessoa["nome"] = $nome;
-    $pessoa["sexo"] = $sexo;
-    $pessoa["aceito"] = $aceito;
-    $pessoa["estado"] = $estado;
-    $pessoa["observacoes"] = $observacoes;
-    /*Fim - Preencher o cadastro da pessoa*/
-    
-    
-    array_push($_SESSION["cadastros"], $pessoa);
+        
+        $pessoa = array();
+        $pessoa["nome"] = $nome;
+        $pessoa["sexo"] = $sexo;
+        $pessoa["aceito"] = $aceito;
+        $pessoa["estado"] = $estado;
+        $pessoa["observacoes"] = $observacoes;
+        
+        $cadastros =& $_SESSION["cadastros"];
+        $cadastros[$id] = $pessoa;
+        
+        echo "Edição efetuada com sucesso!";
+    }    
     
     echo "Cadastro efetuado com sucesso!";
    
